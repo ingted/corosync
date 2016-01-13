@@ -101,6 +101,7 @@ cs_error_t cmap_initialize (cmap_handle_t *handle)
 	if (error != CS_OK) {
 		goto error_destroy;
 	}
+	//printf("anibal: cmap.c cmap_initialize 01\n");
 
 	error = CS_OK;
 	cmap_inst->finalize = 0;
@@ -109,6 +110,8 @@ cs_error_t cmap_initialize (cmap_handle_t *handle)
 		error = qb_to_cs_error(-errno);
 		goto error_put_destroy;
 	}
+
+	//printf("anibal: cmap.c cmap_initialize 02\n");
 
 	(void)hdb_handle_put(&cmap_handle_t_db, *handle);
 
